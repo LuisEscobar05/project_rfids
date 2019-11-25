@@ -8,7 +8,7 @@ class Alumno(models.Model):
     name = models.CharField(max_length=50, null=False)
     matricula = models.CharField(max_length=15, null=False)
     last_name = models.CharField(max_length=60, null=False)
-    id_rfid = models.ForeignKey(Rfid, on_delete = models.SET(-1))
+    id_rfid = models.ForeignKey(Rfid, on_delete = models.SET(-1), null= True)
 
     class Meta:
         db_table = 'Alumno'
