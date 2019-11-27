@@ -9,7 +9,7 @@ class Asistencia(models.Model):
     id_alumno = models.ForeignKey(Alumno, on_delete = models.SET(-1))
 
     class Meta:
-        db_table = 'Asistencia'
+        db_table = 'asistencia'
 
     def __str__(self):
         return self.id

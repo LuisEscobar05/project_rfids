@@ -9,7 +9,7 @@ class Rfid(models.Model):
     status = models.BooleanField(null=False)
 
     class Meta:
-        db_table = 'Rfid'
+        db_table = 'rfid'
 
     def __str__(self):
         return self.id

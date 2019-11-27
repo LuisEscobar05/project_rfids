@@ -11,7 +11,7 @@ class Alumno(models.Model):
     id_rfid = models.ForeignKey(Rfid, on_delete = models.SET(-1), null= True)
 
     class Meta:
-        db_table = 'Alumno'
+        db_table = 'alumno'
 
     def __str__(self):
         return self.id
