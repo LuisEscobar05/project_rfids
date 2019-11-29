@@ -41,3 +41,26 @@ class RfidDetail(APIView):
         rfid = self.get_object(pk)
         rfid.delete()
         return Response('Eliminado')
+
+
+class RfidDetailNumberRFID(APIView):
+    def get_object(self,number_rfid):
+        try: 
+            return Rfid.objects.get(number_rfid=number_rfid)
+        except Rfid.DoesNotExist:
+            raise Http404
+    def get(self, request,number_rfid, format=None):
+        rfid = self.get_object(number_rfid) 
+        serializer = RfidSerializer(rfid)
+        return Response(serializer.data) 
+    # def put(self, request,pk, format=None):
+    #     rfid = self.get_object(pk)
+    #     serializer = RfidSerializer(rfid, data = request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data)
+    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    # def delete(self, request, pk, format=None):
+    #     rfid = self.get_object(pk)
+    #     rfid.delete()
+    #     return Response('Eliminado')
