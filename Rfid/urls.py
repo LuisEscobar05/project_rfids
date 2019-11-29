@@ -4,5 +4,5 @@ from . import views
 urlpatterns = [
     re_path(r'^$', views.RfidView.as_view()),
     re_path(r'^(?P<pk>\w+)$', views.RfidDetail.as_view()),
-    re_path(r'^(?P<number_rfid>\w+)$', views.RfidDetailNumberRFID.as_view()),
+    re_path(r'^number_rfid/(?P<number_rfid>\w+)$', views.RfidDetailNumberRFID.as_view()),
 ]
